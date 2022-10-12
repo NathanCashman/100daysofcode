@@ -26,5 +26,10 @@ screen.onkey(screen.bye, "Escape")
 game_is_on = True
 while game_is_on:
     screen.update()
+    ball.move()
+
+    # Detect collision with paddle
+    if ball.distance(r_paddle) < 10 or ball.distance(l_paddle) < 10:
+        print("BOUNCE")
 
 screen.exitonclick()
